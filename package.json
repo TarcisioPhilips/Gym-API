@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/TarcisioPhilips/Find-A-Friend-API#readme",
   "devDependencies": {
+    "@rocketseat/eslint-config": "2.1.0",
     "@types/node": "20.10.4",
     "tsup": "8.0.1",
     "tsx": "4.6.2",
