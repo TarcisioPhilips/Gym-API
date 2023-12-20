@@ -21,6 +21,7 @@
   "homepage": "https://github.com/TarcisioPhilips/Find-A-Friend-API#readme",
   "devDependencies": {
     "@rocketseat/eslint-config": "2.1.0",
+    "@types/bcryptjs": "2.4.6",
     "@types/node": "20.10.4",
     "prisma": "5.7.0",
     "tsup": "8.0.1",
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "@prisma/client": "5.7.0",
+    "bcryptjs": "2.4.3",
     "dotenv": "16.3.1",
     "fastify": "4.25.1",
     "zod": "3.22.4"
