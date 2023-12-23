@@ -1,21 +1,47 @@
 # Find-A-Friend-API
 
-Nesse projeto desenvolveremos uma API para a adoção de animais, a FindAFriend API, utilizando SOLID e testes.
+In this project we will develop an API for animal adoption, the FindAFriend API, using SOLID and tests.
 
-### Regras da aplicação
+---
 
-- Deve ser possível cadastrar um pet
-- Deve ser possível listar todos os pets disponíveis para adoção em uma cidade
-- Deve ser possível filtrar pets por suas características
-- Deve ser possível visualizar detalhes de um pet para adoção
-- Deve ser possível se cadastrar como uma ORG
-- Deve ser possível realizar login como uma ORG
+### Setup Project
 
-### Regras de negócio
+Install npm packages
+```
+npm install
+```
+Create project migrations
+```
+npx prisma generate
+```
+If you need to create a migration for dev environment:
+```
+npx prisma migrate dev 
+```
+If you need to create a migration for production environment:
+```
+WIP
+```
 
-- Para listar os pets, obrigatoriamente precisamos informar a cidade
-- Uma ORG precisa ter um endereço e um número de WhatsApp
-- Um pet deve estar ligado a uma ORG
-- O usuário que quer adotar, entrará em contato com a ORG via WhatsApp
-- Todos os filtros, além da cidade, são opcionais
-- Para uma ORG acessar a aplicação como admin, ela precisa estar logada
+---
+
+### Application rules
+
+- It must be possible to register a pet
+- It must be possible to list all avaliable pets for adoption in a specific city
+- It must be possible to filter pets by their characteristics
+- It must be possible to view details of a pet up for adoption
+- It must be possible to register as an ORG
+- It must be possible to login as an ORG
+
+
+
+### Business rules
+
+- To list the pets, we must inform the city
+- An ORG must have an address and a WhatsApp number
+- A pet must be linked to an ORG
+- The user who wants to adopt will contact the ORG via WhatsApp
+- All filters, besides the city, are optional
+- For an ORG to access the application as admin, it must be logged in
+
