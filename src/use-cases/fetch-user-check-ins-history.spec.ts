@@ -12,10 +12,6 @@ describe("Fetch User Check-in History Use Case", () => {
     sut = new FetchUserCheckInsUserHistoryUseCase(checkInsRepository);
   });
 
-  afterEach(() => {
-    vi.useRealTimers();
-  });
-
   it("should be able to fetch check-in history", async () => {
     await checkInsRepository.create({
         gym_id: 'gym-01',
