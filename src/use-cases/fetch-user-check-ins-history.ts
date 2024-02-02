@@ -11,7 +11,7 @@ interface FetchUserCheckInsUserHistoryUseCaseResponse {
   checkIns: CheckIn[];
 }
 
-export class FetchUserCheckInsUserHistoryUseCase {
+export class FetchUserCheckInsHistoryUseCase {
   constructor(
     private checkInsRepository: CheckInsRepository,  ) {}
 
