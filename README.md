@@ -1,6 +1,6 @@
-# Find-A-Friend-API
+# Gym-API
 
-In this project we will develop an API for animal adoption, the FindAFriend API, using SOLID and tests.
+In this project we will develop an API for a app like Gympass or TotalPass using SOLID and tests.
 
 ---
 
@@ -14,34 +14,45 @@ Create project migrations
 ```
 npx prisma generate
 ```
-If you need to create a migration for dev environment:
+If you need to create a migration:
 ```
 npx prisma migrate dev 
 ```
-If you need to create a migration for production environment:
+To start the project run:
 ```
-WIP
+npm run dev 
 ```
 
 ---
 
-### Application rules
+### Requisitos Funcionais 
 
-- It must be possible to register a pet
-- It must be possible to list all avaliable pets for adoption in a specific city
-- It must be possible to filter pets by their characteristics
-- It must be possible to view details of a pet up for adoption
-- It must be possible to register as an ORG
-- It must be possible to login as an ORG
+ [x] Deve ser possível se cadastrar;
+ [x] Deve ser possível se autenticar;
+ [x] Deve ser possível obter o perfil de um usuário logado;
+ [x] Deve ser possível obter o número de check-ins realizados pelo usuário logado;
+ [x] Deve ser possível o usuário obter o seu histórico de check-ins;
+ [x] Deve ser possível o usuário buscar academias próximas (até 10km);
+ [x] Deve ser possível o usuário buscar academias pelo nome;
+ [x] Deve ser possível o usuário realizar check-in em uma academia;
+ [x] Deve ser possível validar o check-in de um usuário;
+ [x] Deve ser possível cadastrar uma academia;
 
 
+### Regras de Negócio
 
-### Business rules
+ [x] O usuário não deve poder se cadastrar com um e-mail duplicado;
+ [x] O usuário não pode fazer 2 check-ins no mesmo dia;
+ [x] O usuário não pode fazer check-in se não estiver perto (100m) da academia;
+ [x] O check-in só pode ser validado até 20 minutos após ser criado;
+ [x] O check-in só pode ser validado por administradores;
+ [x] A academia só pode ser cadastrada por administradores;
 
-- To list the pets, we must inform the city
-- An ORG must have an address and a WhatsApp number
-- A pet must be linked to an ORG
-- The user who wants to adopt will contact the ORG via WhatsApp
-- All filters, besides the city, are optional
-- For an ORG to access the application as admin, it must be logged in
+
+### Requisitos Não Funcionais
+
+ [x] A senha do usuário precisa estar criptografada;
+ [x] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
+ [x] Todas listas de dados precisam estar paginadas com 20 itens por página;
+ [x] O usuário deve ser identificado por um JWT (JSON Web Token);
 
