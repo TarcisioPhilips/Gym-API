@@ -1,34 +1,39 @@
 export interface Coordinate {
-    latitude: number
-    longitude: number
+  latitude: number;
+  longitude: number;
+}
+
+/**
+ * Calculates the distance between two coordinates on Earth using the Haversine formula.
+ * @param from The starting coordinate.
+ * @param to The ending coordinate.
+ * @returns The distance between the two coordinates in kilometers.
+ */
+export function getDistanceBetweenCoordinates(from: Coordinate, to: Coordinate): number {
+  if (from.latitude === to.latitude && from.longitude === to.longitude) {
+    return 0;
   }
-  
-  export function getDistanceBetweenCoordinates(
-    from: Coordinate,
-    to: Coordinate,
-  ) {
-    if (from.latitude === to.latitude && from.longitude === to.longitude) {
-      return 0
-    }
-  
-    const fromRadian = (Math.PI * from.latitude) / 180
-    const toRadian = (Math.PI * to.latitude) / 180
-  
-    const theta = from.longitude - to.longitude
-    const radTheta = (Math.PI * theta) / 180
-  
-    let dist =
-      Math.sin(fromRadian) * Math.sin(toRadian) +
-      Math.cos(fromRadian) * Math.cos(toRadian) * Math.cos(radTheta)
-  
-    if (dist > 1) {
-      dist = 1
-    }
-  
-    dist = Math.acos(dist)
-    dist = (dist * 180) / Math.PI
-    dist = dist * 60 * 1.1515
-    dist = dist * 1.609344 // return distance in kilometers
-  
-    return dist
-  }
+
+  const earthRadiusKm = 6371; 
+  const dLat = degreesToRadians(to.latitude - from.latitude);
+  const dLon = degreesToRadians(to.longitude - from.longitude);
+
+  const fromLatInRadians = degreesToRadians(from.latitude);
+  const toLatInRadians = degreesToRadians(to.latitude);
+
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(fromLatInRadians) * Math.cos(toLatInRadians);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+  return earthRadiusKm * c;
+}
+
+/**
+ * Converts degrees to radians.
+ * @param degrees The angle in degrees.
+ * @returns The angle in radians.
+ */
+function degreesToRadians(degrees: number): number {
+  return (degrees * Math.PI) / 180;
+}
