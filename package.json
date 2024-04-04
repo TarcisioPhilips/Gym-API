@@ -1,7 +1,7 @@
 {
-  "name": "find-a-friend-api",
+  "name": "gym-api",
   "version": "1.0.0",
-  "description": "Nesse projeto desenvolveremos uma API para a adoção de animais, a FindAFriend API, utilizando SOLID e testes.",
+  "description": "In this project will be developed an API for a app like Gympass or TotalPass using SOLID principles and tests.",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
@@ -18,15 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TarcisioPhilips/Find-A-Friend-API.git"
+    "url": "git+https://github.com/TarcisioPhilips/Gym-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TarcisioPhilips/Find-A-Friend-API/issues"
+    "url": "https://github.com/TarcisioPhilips/Gym-API/issues"
   },
-  "homepage": "https://github.com/TarcisioPhilips/Find-A-Friend-API#readme",
+  "homepage": "https://github.com/TarcisioPhilips/Gym-API#readme",
   "devDependencies": {
     "@rocketseat/eslint-config": "2.1.0",
     "@types/bcryptjs": "2.4.6",
