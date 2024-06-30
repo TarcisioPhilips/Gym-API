@@ -1,6 +1,6 @@
 # Gym-API
 
-In this project we will develop an API for a app like Gympass or TotalPass using SOLID and tests.
+In this project we will develop an API for a app like Gympass or TotalPass using SOLID and tests!
 
 ---
 
